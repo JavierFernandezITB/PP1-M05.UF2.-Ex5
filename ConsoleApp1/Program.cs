@@ -34,6 +34,9 @@ namespace myNamespace
                     case 3:
                         ShowRandomNum(utils);
                         break;
+                    case 4:
+                        CountVowelsFromText(utils);
+                        break;
                     case 5:
                         mainMenuLoop = false;
                         break;
@@ -80,6 +83,18 @@ namespace myNamespace
             Console.WriteLine(inputMaxRange);
             maxRange = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(resultOutput, utils.GetRandomNumber(minRange, maxRange));
+        }
+
+        public static void CountVowelsFromText(Utils utils)
+        {
+            const string resultOutput = "Resultado: {0}";
+            const string inputText = "Introduce el texto a revisar: ";
+
+            string text;
+
+            Console.WriteLine(inputText);
+            text = Console.ReadLine();
+            Console.WriteLine(resultOutput, utils.CountVowels(text));
         }
     }
 }
