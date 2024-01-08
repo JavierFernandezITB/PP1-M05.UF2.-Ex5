@@ -31,6 +31,9 @@ namespace myNamespace
                     case 2:
                         CalcPower(utils);
                         break;
+                    case 3:
+                        ShowRandomNum(utils);
+                        break;
                     case 5:
                         mainMenuLoop = false;
                         break;
@@ -62,6 +65,21 @@ namespace myNamespace
             Console.WriteLine(askForPower);
             pow = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(resultOutput, utils.Pow(val, pow));
+        }
+
+        public static void ShowRandomNum(Utils utils)
+        {
+            const string inputMinRange = "Introduce el rango mínimo: ";
+            const string inputMaxRange = "Introduce el rango máximo: ";
+            const string resultOutput = "Resultado: {0}";
+
+            int minRange, maxRange;
+
+            Console.WriteLine(inputMinRange);
+            minRange = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(inputMaxRange);
+            maxRange = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(resultOutput, utils.GetRandomNumber(minRange, maxRange));
         }
     }
 }
