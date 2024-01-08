@@ -28,7 +28,9 @@ namespace myNamespace
                     case 1:
                         ValidateNum(utils);
                         break;
-                    
+                    case 2:
+                        CalcPower(utils);
+                        break;
                     case 5:
                         mainMenuLoop = false;
                         break;
@@ -47,6 +49,19 @@ namespace myNamespace
             Console.WriteLine(utils.IsOddNumber(Convert.ToInt32(Console.ReadLine())) ? isOdd : isNotOdd);
         }
 
-        
+        public static void CalcPower(Utils utils)
+        {
+            const string askForValue = "Introduce un valor: ";
+            const string askForPower = "Introduce la potencia: ";
+            const string resultOutput = "Resultado: {0}";
+
+            int val, pow;
+
+            Console.WriteLine(askForValue);
+            val = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(askForPower);
+            pow = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(resultOutput, utils.Pow(val, pow));
+        }
     }
 }
